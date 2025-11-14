@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="eng"></html>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>NEWS</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEWS</title>
 
 <style>
 * {
@@ -39,7 +40,7 @@ body {
 .header .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; 
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
@@ -48,16 +49,20 @@ body {
 .logo img {
   width: 50px;
 }
+.log img:hover{
+  transform: translatex(8px);
+}
 .nav-menu ul {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 25px;
 }
 .nav-menu a {
   text-decoration: none;
   color: #000;
   text-transform: uppercase;
   font-weight: 500;
+  font-size: 18px;
 }
 .nav-menu a:hover {
   color: var(--accent);
@@ -67,16 +72,30 @@ body {
   color: #000;
   padding: 10px 16px;
   border-radius: 10px;
-  text-decoration: none;
+  text-decoration: none; 
 }
+.btn:hover{
+  background-color: aqua;
+  transform: translateX(5px);
+}
+
+
 
 /* HERO */
 .hero {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 72px);
   margin-top: 72px;
   overflow: hidden;
 }
+
+@media (max-width:600px){
+  .hero {
+    margin-top: 140px;   /* header becomes taller on mobile */
+    height: calc(100vh - 140px);
+  }
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -97,7 +116,7 @@ body {
   text-align: center;
   color: #fff;
 
-  /
+  
   animation: fadeLoop 3s ease-in-out infinite;
 }
 .hero-content h1 {
@@ -133,11 +152,11 @@ body {
 .NEWS-section {
   text-align: center;
   padding: 80px 20px;
-  background: radial-gradient(circle at top, rgb(180, 122, 122), #000);
+  background: radial-gradient(circle at top, white(180, 122, 122), #000);
 }
 .NEWS-section h2 {
   font-size: 3rem;
-  background: var(--primary-gradient);
+  background: linear-gradient(red,blue,yellow);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -225,21 +244,23 @@ body {
 
 /* FEATURES SECTION */
 .features {
-  background: black;
-  color: green;
+  background: grey;
+  color: black;
   text-align: center;
   padding: 80px 20px;
 }
-.features h2 {
+.features h2{
   font-size: 3rem;
-  background: var(--primary-gradient);
+  background: silver;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
+  color: #00ffcc;
 }
+
 .features p {
-  color: #ccc;
+  color:black;
   font-size: 1.1rem;
   margin-bottom: 50px;
 }
@@ -251,7 +272,7 @@ body {
   margin: 0 auto;
 }
 .feature-card {
-  background: rgba(255,255,255,0.05);
+  background: black;
   padding: 30px;
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.1);
@@ -263,17 +284,269 @@ body {
 }
 .feature-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: orange;
+  margin-bottom: 8px;
 }
 .feature-card p {
-  color: yellow;
+  color:white;
   font-size: 1rem;
 }
+/* ----------------------------
+   LARGE DESKTOP (1200px+)
+----------------------------- */
+@media (min-width:1200px){
+  .main-title{ font-size:5rem; }
+  .subtitle{ font-size:4rem; }
+}
 
+/* ----------------------------
+   DESKTOP (992–1199px)
+----------------------------- */
+@media (max-width:1199px) and (min-width:992px){
+  .main-title{ font-size:4rem; }
+  .subtitle{ font-size:3.5rem; }
+}
+
+/* ----------------------------
+   TABLET (768–991px)
+----------------------------- */
+@media (max-width:991px) and (min-width:768px){
+  .main-title{
+    font-size:3rem;
+    letter-spacing:0.08em;
+  }
+  .subtitle{
+    font-size:2.5rem;
+    letter-spacing:0.12em;
+  }
+  .text-sequence{ height:300px; }
+}
+
+/* ----------------------------
+   MOBILE LARGE (576–767px)
+----------------------------- */
+@media (max-width:767px) and (min-width:576px){
+  .main-title{
+    font-size:2.2rem;
+    letter-spacing:0.06em;
+    line-height:1.2;
+  }
+  .subtitle{
+    font-size:1.8rem;
+    letter-spacing:0.1em;
+  }
+  .text-sequence{ height:250px; }
+}
+
+/* ----------------------------
+   NEW — MOBILE MEDIUM (425–575px)
+----------------------------- */
+@media (max-width:575px) and (min-width:425px){
+  .main-title{ font-size:2rem; }
+  .subtitle{ font-size:1.6rem; }
+  .text-sequence{ height:220px; }
+}
+
+/* ----------------------------
+   MOBILE SMALL (0–424px)
+----------------------------- */
+@media (max-width:424px){
+  .main-title{
+    font-size:1.8rem;
+    letter-spacing:0.04em;
+    line-height:1.2;
+  }
+  .subtitle{
+    font-size:1.4rem;
+    letter-spacing:0.08em;
+  }
+  .text-sequence{ height:200px; }
+  .content-overlay{
+    max-width:95%;
+    padding:0 1rem;
+  }
+}
+
+/* ----------------------------
+   EXTRA SMALL (0–320px)
+----------------------------- */
+@media (max-width:320px){
+  .main-title{ font-size:1.5rem; }
+  .subtitle{ font-size:1.2rem; }
+  .text-sequence{ height:180px; }
+}
+
+/* ----------------------------
+   LANDSCAPE FIX (max 800px)
+----------------------------- */
+@media (max-width:800px) and (orientation: landscape){
+  .hero-container{ height:100vh; }
+  .main-title{ font-size:2rem; }
+  .subtitle{ font-size:1.8rem; }
+  .text-sequence{ height:150px; }
+}
+
+/* ----------------------------
+   GLOBAL MOBILE LAYOUT FIX (0–600px)
+----------------------------- */
+@media (max-width:600px){
+
+  .header .container{
+    flex-direction:column;
+    height:auto;
+    padding:15px;
+    gap:10px;
+  }
+
+  .logo img{
+    width:45px;
+  }
+
+  .nav-menu ul{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+
+  .nav-menu a{
+    font-size:16px;
+  }
+
+  .btn{
+    font-size:15px;
+    padding:8px 14px;
+  }
+}
+
+
+/* ====================
+       FOOTER
+==================== */
+/* FOOTER STYLING */
+.pro-footer {
+  background:lightslategray;
+  color: #fff;
+  padding: 70px 40px 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+}
+
+/* Titles */
+.footer-col h3 {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/* Links */
+.footer-col ul {
+  list-style: none;
+  
+}
+footer {
+  margin-top: 40px; /* increase this number for more space */
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #bfbfbf;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+/* Newsletter */
+.newsletter {
+  max-width: 1400px;
+  margin: 50px auto 30px;
+  text-align: left;
+}
+
+.newsletter h3 {
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  max-width: 450px;
+}
+
+.input-row input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  background: #111;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-row button {
+  padding: 12px 25px;
+  background: #fff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.input-row button:hover {
+  background:aqua;
+}
+
+
+
+.address {
+  text-align: left;
+  margin: 40px auto 0;
+  max-width: 1400px;
+  color: #777;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .input-row button {
+    width: 100%;
+  }
+}
 </style>
 </head>
 <body>
@@ -294,7 +567,7 @@ body {
         <li><a href="#">Politics</a></li>
       </ul>
     </nav>
-    <a class="btn" href="#">Contact</a>
+    <a class="btn" href="#">Get in touch</a>
   </div>
 </header>
 
@@ -316,7 +589,7 @@ body {
       <div class="NEWS-card"><img src="https://thumbs.dreamstime.com/b/crime-scene-19421274.jpg"><div class="card-title">CRIME</div></div>
       <div class="NEWS-card"><img src="https://cdn.modernghana.com/images/content/4202019111023_8dt2wjivvq_economics.jpg"><div class="card-title">ECONOMICS</div></div>
       <div class="NEWS-card"><img src="https://images.pexels.com/photos/375885/pexels-photo-375885.jpeg"><div class="card-title">CINEMA</div></div>
-      <div class="NEWS-card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Indian_Parliament_House.jpg"><div class="card-title">POLITICS</div></div>
+      <div class="NEWS-card"><img src="https://www.bing.com/th/id/OIP.84x9gIOzjF7kemlt3OMC6gHaE3?w=251&h=211&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&dpr=1.5&pid=3.1&rm=2&ucfimg=1"><div class="card-title">POLITICS</div></div>
     </div>
   </div>
 </section>
@@ -359,6 +632,83 @@ body {
       <p>Engage with our stories through videos, live updates, and discussions.</p>
     </div>
   </div>
+
+  <!-- FOOTER -->
+     <footer class="pro-footer">
+  <div class="footer-container">
+
+    <!-- Categories -->
+    <div class="footer-col">
+      <h3>CATEGORIES</h3>
+      <ul>
+        <li><a href="#">Politics</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">World News</a></li>
+        <li><a href="#">Entertainment</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Business</a></li>
+      </ul>
+    </div>
+
+    <!-- Account -->
+    <div class="footer-col">
+      <h3>ACCOUNT</h3>
+      <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Create Account</a></li>
+        <li><a href="#">Manage Subscription</a></li>
+        <li><a href="#">Bookmarks</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+
+    <!-- Information -->
+    <div class="footer-col">
+      <h3>INFORMATION</h3>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Advertise With Us</a></li>
+        <li><a href="#">Press Release</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Discover -->
+    <div class="footer-col">
+      <h3>DISCOVER</h3>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h3>SIGN UP TO GET THE LATEST NEWS</h3>
+    <div class="input-row">
+      <input type="email" placeholder="Your Email" />
+      <button>SUBMIT</button>
+    </div>
+  </div>
+
+  
+
+  <div class="address">
+    <p>NEWS24 — 51-A, Pragathi Nagar Road, Addagutta Society, Kphb, Hyderabad, Telangana 500085</p>
+  </div>
+
+</footer>
+
+
+
 </section>
 
 </body>
